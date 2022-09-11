@@ -1,0 +1,154 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '#c2e4f0', foreground: '#000000', border: '',
+    visible: true, role: null, html: ''}
+  event_bindings: {}
+components:
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter Image and Language to be translated : ', font_size: 17,
+      font: Sans-serif, spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: true, underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'XCHTHT,SRQZTV', full_width_row: false}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Image link,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: image_link
+    layout_properties: {grid_position: 'LGAAJN,IJVCWE', slot: default}
+    event_bindings: {pressed_enter: image_link_pressed_enter}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Language,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: lang_img
+    layout_properties: {grid_position: 'LGAAJN,BEBJQM'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: submit_img
+    layout_properties: {grid_position: 'LGAAJN,UVTBID', slot: default}
+    event_bindings: {click: submit_img_click}
+  event_bindings: {}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel_copy
+  layout_properties:
+    col_widths: {}
+    grid_position: ZJJEDA,KOQRRG
+    slot: default
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'OCR recognised text :', font_size: 17, font: Sans-serif,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'XCHTHT,UEEMOT'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: image_text
+    layout_properties: {grid_position: 'LGAAJN,ZLITJX', row_background: '', full_width_row: false}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel_copy_2
+  layout_properties:
+    col_widths: {}
+    grid_position: LGDPSI,VAOQOG
+    slot: default
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Please select the language to translate the text in :',
+      font_size: 17, font: Sans-serif, spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: true, underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'XCHTHT,UEEMOT'}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: Select one
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [en, hi, fr, pt, es, mr, zh-CN]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: lang_dropdown
+    layout_properties: {grid_position: 'LGAAJN,FGCMDY'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: submit_translang
+    layout_properties: {grid_position: 'LGAAJN,CDVVBT', slot: default}
+    event_bindings: {click: submit_translang_click}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel_copy_3
+  layout_properties:
+    col_widths: {}
+    grid_position: ZJJEDA,KOQRRG
+    slot: default
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Translated Text :', font_size: 17, font: Sans-serif, spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'XCHTHT,UEEMOT'}
+  - type: Label
+    properties: {}
+    name: translated_text
+    layout_properties: {grid_position: 'LGAAJN,ZLITJX'}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel_copy_4
+  layout_properties:
+    col_widths: {}
+    grid_position: VQZCGS,OCXZWO
+    slot: default
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Listen to the translated text :', font_size: 17, font: Sans-serif,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: label_3_copy
+    layout_properties: {grid_position: 'XCHTHT,UEEMOT'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Download Audio File, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: download_audio
+    layout_properties: {grid_position: 'XCHTHT,QBBSGI', slot: default}
+    event_bindings: {click: download_audio_click}
